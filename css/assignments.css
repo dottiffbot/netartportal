@@ -1,0 +1,162 @@
+/* https://vanslaars.io/articles/create-a-card-flip-animation-with-css */
+
+
+body{
+  background-color: #ff6823;
+  margin: 0 auto;
+ 
+}
+
+#assignments-grid{
+  margin: 8em 3em 3em;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  align-content: center;
+  justify-content: center;
+
+
+}
+
+img{
+  display: inline-block;
+  width: 100%;
+}
+
+.assignment{
+/*   width: 25vw;
+  height: 55vh; */
+/*   height: 400px;
+  width: 250px; */
+  min-height: 500px;
+  min-width: 250px;
+  
+
+  border-radius: 0.5rem;
+  position: relative;
+ 
+
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.card p{
+  font-size: 0.85em;
+  padding: 1em;
+  color: white;
+/*   margin: 0; */
+  
+/*   position: relative; */
+  
+}
+h1{
+  text-align: center;
+  color: white;
+}
+.cardFront,
+.cardBack {
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  
+  box-shadow: 1px 1px 5px black;
+  border: 1px solid black;
+  
+
+  transition: transform 0.25s ease;
+  position: absolute;
+  
+  -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+  
+   overflow-x: hidden;
+  overflow-y: auto;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+  
+
+  
+
+}
+
+
+
+
+.cardBack {
+  transform: perspective(1000px)rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color:  #C2C8CF;
+
+
+}
+
+.cardBack.flipped {
+  transform: rotateY(0deg);
+
+
+
+}
+
+.cardFront {
+  transform: perspective(1000px) rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+ 
+}
+
+.cardFront.flipped {
+  transform: perspective(1000px) rotateY(-180deg);
+
+} 
+
+.title{
+  text-align: center;
+/*   background-color: #ff6823; */
+/*   width: 50%;
+  height: 50%; */
+  border-radius: 50%;
+}
+
+.circles{
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.round{
+  border-radius: 100%;
+  background-color: #ff6823;
+  padding: 2em;
+  width: 3em;
+  height: 3em;
+  box-shadow: inset 1px 1px 5px black;
+
+  
+}
+
+
+@media only screen and (max-width: 800px) {
+  #assignments-grid{
+  grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .assignment{
+    width: 70vw;
+  }
+
+} 
