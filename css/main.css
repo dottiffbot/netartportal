@@ -1,0 +1,35 @@
+
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+body{
+/*   background-color: black; */
+    font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  
+}
+
+
+#pencil{
+  width: 15vw;
+  min-width: 120px;
+  max-width: 210px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.back{
+  position: relative;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+}

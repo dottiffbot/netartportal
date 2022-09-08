@@ -1,0 +1,82 @@
+/* Basic page style resets */
+
+body{
+  background-color: black;
+}
+
+.classroom{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participant{
+  background-color: orange;
+  border-radius: 100%;
+  padding: 3em 2em;
+  margin: 0.5em;
+/*   filter: blur(30px); */
+  display: inline-block;
+  
+  width:100px;
+  margin: 3em;
+  
+   grid-area: 1 / 1 / 2 / 2;
+/*   align-self:center; */
+  animation: blink 10s ease-out infinite;
+ 
+ 
+}
+
+#pencil{
+  width: 10vw;
+}
+
+
+ .url{
+  text-decoration: none;
+  color: white;
+ grid-area: 1 / 1 / 2 / 2;
+  display: inline-block;
+   align-self:center;
+   text-align:center;
+   padding: 1em;
+   z-index: 1;  
+   
+}
+
+  
+
+.participant:hover{
+  filter:none;
+}
+
+.holder{
+ display: grid;
+grid-template-rows: 1fr; 
+grid-template-columns: 1fr;
+animation: floaty 10s ease-in infinite;
+  
+}
+
+@keyframes blink {
+  0%{
+    filter: blur(5px);
+  }
+  
+  100%{
+    filter: blur(40px);
+  }
+}
+
+
+@keyframes floaty{
+  0%, 100% {transform: translateX(0px) translateY(0px) translateZ(0px);}
+	50%{transform: translateX(15px) translateY(30px) translateZ(30px);}
+}
+
+@media (max-width: 800px) {
+  
+}

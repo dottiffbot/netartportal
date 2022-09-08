@@ -1,0 +1,179 @@
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Start https://www.cursors-4u.com */
+* {
+  cursor: url(https://cur.cursors-4u.net/games/gam-11/gam1084.ani),
+    url(https://cur.cursors-4u.net/games/gam-11/gam1084.png), auto !important;
+} /* End https://www.cursors-4u.com */
+
+body {
+  margin: 0px;
+  height: 100vh;
+  /*  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(54,149,186,1) 50%, rgba(67,45,253,1) 100%); */
+
+  background: radial-gradient(circle at bottom, #cec6eb, transparent 80%),
+    linear-gradient(to top, #090979 0%, transparent 70%),
+    linear-gradient(to bottom, transparent, rgba(206, 198, 235, 0.4) 70%),
+    #63d1d1;
+
+  animation: bg 30s infinite;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.mobile-menu img {
+  min-width: 50px;
+  max-width: 100px;
+}
+
+@keyframes bg {
+  0%,
+  100% {
+    background-color: #ff0000;
+  }
+  25% {
+    background-color: #ace071;
+  }
+  50% {
+    background-color: #f4c855;
+  }
+  75% {
+    background-color: #eeaeca;
+  }
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hovered {
+  cursor: help;
+}
+
+.label {
+  color: #904b2e;
+  text-decoration: none;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0.5em;
+
+  border-radius: 50px;
+  border: 1.25mm ridge #904b2e;
+  box-shadow: 1px 1px 4px black;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  z-index: 1;
+}
+
+.label a {
+}
+
+#loading-screen {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transition: 1s opacity;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #ff0000;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #987dd4;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #cf6e90;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+.mobile-menu {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 800px) {
+  .mobile-menu {
+    display: block;
+  }
+} 
